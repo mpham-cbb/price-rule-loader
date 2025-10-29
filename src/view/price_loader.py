@@ -64,13 +64,14 @@ def price_loader():
         st.stop()
 
     elif pricing_rule_df.empty:
-        # st.warning("Pricing Rule file is missing. Please upload it.")
+        # st.warning("Pricing Rule file is missing. Please upload it.")  
         st.stop()
 
     # If both files are uploaded, proceed with processing
     st.success("Files uploaded successfully! Processing data...")
 
     output_df = fill_customers_with_pricing_rule(customer_df, pricing_rule_df)
+    st.success("Data processed successfully!")
 
     # Dowload file
     st.header("📎Exporting Results")
